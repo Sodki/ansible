@@ -200,6 +200,11 @@ EXAMPLES = '''
         cidr_ip: 0.0.0.0/0
 '''
 
+import re
+import time
+from ansible.module_utils.basic import AnsibleModule
+from ansible.module_utils.ec2 import ec2_connect, ec2_argument_spec
+
 try:
     import boto.ec2
     from boto.ec2.securitygroup import SecurityGroup
